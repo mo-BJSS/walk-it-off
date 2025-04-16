@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You Can’t Just Walk It Off – Resources</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/68/Vincent_van_Gogh_-_Almond_blossom_-_Google_Art_Project.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+    }
+    header, footer, main, .modal {
+      background-color: rgba(255, 255, 255, 0.92);
+    }
+    h1, h2, h3 {
+      font-family: Georgia, serif;
+    }
+    h1 {
+      letter-spacing: -0.5px;
+    }
+    section {
+      border-left: 4px solid #6b7280;
+      padding-left: 1.25rem;
+    }
+    img.shadow-md, img.shadow {
+      border-radius: 0.5rem;
+    }
+    button:focus-visible {
+      outline: 2px solid #6366f1;
+      outline-offset: 2px;
+    }
+  </style>
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      const modals = document.querySelectorAll('.modal');
+      const openButtons = document.querySelectorAll('[data-modal-target]');
+      const closeButtons = document.querySelectorAll('[data-close-button]');
+
+      openButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const modal = document.querySelector(button.dataset.modalTarget);
+          modal?.classList.remove('hidden');
+        });
+      });
+
+      closeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const modal = button.closest('.modal');
+          modal?.classList.add('hidden');
+        });
+      });
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          modals.forEach(modal => modal.classList.add('hidden'));
+        }
+      });
+
+      window.addEventListener('click', (e) => {
+        modals.forEach(modal => {
+          if (e.target === modal) {
+            modal.classList.add('hidden');
+          }
+        });
+      });
+    });
+  </script>
+</head>
+
+<body class="text-gray-800 font-serif">
+  <header class="shadow p-6 text-center">
+    <h1 class="text-3xl font-bold text-gray-900">You Can’t Just Walk It Off – Resources</h1>
+    <p class="mt-2 text-lg text-gray-700">These are some resources I have found helpful and have referenced in the presentation.</p>
+  </header>
+
+  <main class="px-4 md:px-16 py-10 space-y-16">
+    <!-- Help Organisations -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">Help Organisations (UK)</h2>
+      <ul class="list-disc list-inside">
+        <li><a href="https://www.mind.org.uk" class="text-blue-600 underline" target="_blank">Mind</a></li>
+        <li><a href="https://www.samaritans.org" class="text-blue-600 underline" target="_blank">Samaritans</a></li>
+        <li><a href="https://www.nhs.uk/mental-health/" class="text-blue-600 underline" target="_blank">NHS Mental Health Services</a></li>
+      </ul>
+    </section>
+
+    <!-- Research Papers -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">Research Papers</h2>
+      <ul class="space-y-4">
+        <li>
+          <strong>Serotonin and Depression: A Disconnect between the Advertisements and the Scientific Literature</strong><br/>
+          <span><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2077351/" target="_blank" class="text-blue-600 underline">Read on NCBI</a></span>
+        </li>
+        <li>
+          <strong>Dopaminergic Mechanisms in Depression and Reward</strong><br/>
+          <span><a href="https://pubmed.ncbi.nlm.nih.gov/15890204/" target="_blank" class="text-blue-600 underline">Read on PubMed</a></span>
+        </li>
+        <li>
+          <strong>Biological basis of depression: An update</strong><br/>
+          <span><a href="https://pubmed.ncbi.nlm.nih.gov/18021903/" target="_blank" class="text-blue-600 underline">Read on PubMed</a></span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Recommended Reading -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">Recommended Reading</h2>
+      <div class="grid md:grid-cols-4 sm:grid-cols-2 gap-6">
+        <!-- Each book tile -->
+        
+        <script>
+          const books = [
+            {
+              id: 'hari',
+              title: 'Lost Connections',
+              author: 'Johann Hari',
+              img: 'https://cdn.waterstones.com/bookjackets/large/9781/4088/9781408878729.jpg',
+              desc: 'I found this book at a time when I was grasping for meaning. Hari doesn’t shy away from controversy, and while some of his science has been debated, his core argument — that disconnection is a driver of depression — resonated deeply',
+              impact: 'Helped me reframe depression not just as an illness, but as a signal, something meaningful to be understood and responded to. While I don’t fully agree with a lot of the points in the book, I found it helpful in looking at depression beyond the chemicals out of balance',
+              bookshop: 'https://uk.bookshop.org/p/books/lost-connections-uncovering-the-real-causes-of-depression-and-the-unexpected-solutions-johann-hari/2318779?ean=9781408878699',
+              waterstones: 'https://www.waterstones.com/book/lost-connections/johann-hari/9781408878699'
+            },
+            {
+              id: 'solomon',
+              title: 'The Noonday Demon',
+              author: 'Andrew Solomon',
+              img: 'https://cdn.waterstones.com/bookjackets/large/9781/7847/9781784702670.jpg',
+              desc: 'This to me was a hard read, Solmon narrative is very personal and feels very honest. I liked how he tried to explain the science with the personal feel.',
+              impact: 'I found the comparisions and the honesty in his narrative very helpful and surely had an inflence in me getting the courage to talk about my own story and experience.',
+              bookshop: 'https://uk.bookshop.org/p/books/the-noonday-demon-andrew-solomon/6585384?ean=9780099554870',
+              waterstones: 'https://www.waterstones.com/book/the-noonday-demon/andrew-solomon/9780099554870'
+            },
+            {
+              id: 'oconnor',
+              title: 'Undoing Depression',
+              author: 'Richard O’Connor',
+              img: 'https://m.media-amazon.com/images/I/81HtAR-PHJL._SY522_.jpg',
+              desc: 'A clinical psychologist explores depression as a learned pattern that can be unlearned.',
+              impact: 'Blends cognitive behavioural therapy with neuroscience and recovery tools.',
+              bookshop: 'https://uk.bookshop.org/p/books/undoing-depression-richard-oconnor/6452530?ean=9780316043410',
+              waterstones: 'https://www.waterstones.com/book/undoing-depression/richard-oconnor/9780316043410'
+            },
+            {
+              id: 'jump',
+              title: 'The Reason I Jump',
+              author: 'Naoki Higashida',
+              img: 'https://cdn.waterstones.com/bookjackets/large/9781/4447/9781444776775.jpg',
+              desc: 'Written by a 13-year-old boy with autism, this book offers insight into a unique neurodivergent perspective.',
+              impact: 'Encourages empathy and understanding of communication differences and inner lives.',
+              bookshop: 'https://uk.bookshop.org/p/books/the-reason-i-jump-naoki-higashida/1385101?ean=9781444776775',
+              waterstones: 'https://www.waterstones.com/book/the-reason-i-jump/naoki-higashida/9781444776775'
+            },
+            {
+              id: 'fall7',
+              title: 'Fall Down 7 Times Get Up 8',
+              author: 'Naoki Higashida',
+              img: 'https://cdn.waterstones.com/bookjackets/large/9781/4447/9781444799101.jpg',
+              desc: 'A continuation of Naoki’s writing as he matures into adulthood, reflecting on support, joy, and struggles.',
+              impact: 'Gives voice to non-verbal individuals and celebrates persistence through adversity.',
+              bookshop: 'https://uk.bookshop.org/p/books/fall-down-7-times-get-up-8-naoki-higashida/1943154?ean=9781473633249',
+              waterstones: 'https://www.waterstones.com/book/fall-down-7-times-get-up-8/naoki-higashida/9781473633249'
+            },
+            {
+              id: 'burkeman',
+              title: 'The Antidote',
+              author: 'Oliver Burkeman',
+              img: 'https://cdn.waterstones.com/bookjackets/large/9781/7847/9781784709662.jpg',
+              desc: 'A counterintuitive guide to happiness that embraces uncertainty, failure, and acceptance.',
+              impact: 'Invites readers to rethink “positive thinking” and instead live more openly with life’s uncertainties.',
+              bookshop: 'https://uk.bookshop.org/p/books/the-antidote-oliver-burkeman/1509377?ean=9781784700935',
+              waterstones: 'https://www.waterstones.com/book/the-antidote/oliver-burkeman/9781784700935'
+            },
+            
+            {
+              id: 'haig',
+              title: 'Reasons to Stay Alive',
+              author: 'Matt Haig',
+              img: 'https://cdn.waterstones.com/bookjackets/large/9781/8372/9781837264629.jpg',
+              desc: 'I haven’t read this one yet but a lot of people have recommended it. Once I come around to reading it I will update this',
+              impact: '',
+              bookshop: 'https://uk.bookshop.org/p/books/reasons-to-stay-alive-matt-haig/1370671?ean=9781782116820',
+              waterstones: 'https://www.waterstones.com/book/reasons-to-stay-alive/matt-haig/9781782116820'
+            },
+            {
+              id: 'furrows',
+              title: 'The Furrows',
+              author: 'Namwali Serpell',
+              img: 'https://cdn.waterstones.com/bookjackets/large/9781/5291/9781529115550.jpg',
+              desc: 'A haunting novel exploring grief, memory, and identity, framed through psychological trauma.',
+              impact: 'Powerfully literary exploration of mental health and mourning through shifting narratives.',
+              bookshop: 'https://uk.bookshop.org/p/books/the-furrows-namwali-serpell/7444731?ean=9781783789979',
+              waterstones: 'https://www.waterstones.com/book/the-furrows/namwali-serpell/9781529115550'
+            }
+          ];
+
+          document.currentScript.insertAdjacentHTML('beforebegin', books.map(book => `
+            <div>
+              <button data-modal-target="#modal-${book.id}" class="focus:outline-none">
+                <img src="${book.img}" alt="Cover of ${book.title}" class="w-full h-auto shadow-md">
+                <p class="mt-2 font-semibold">${book.title}</p>
+                <p class="text-sm">by ${book.author}</p>
+              </button>
+            </div>
+          `).join(''));
+
+          document.body.insertAdjacentHTML('beforeend', books.map(book => `
+            <div id="modal-${book.id}" class="modal fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+              <div class="bg-white max-w-lg w-full p-6 rounded-lg shadow-lg relative">
+                <button class="absolute top-2 right-2 text-xl" data-close-button>&times;</button>
+                <h3 class="text-xl font-bold mb-2">${book.title} – ${book.author}</h3>
+                <p class="mb-2">${book.desc}</p>
+                <p class="mb-2">${book.impact}</p>
+                <div class="flex justify-between mt-4">
+                  <a href="${book.bookshop}" target="_blank" class="text-blue-600 underline">Buy on Bookshop.org</a>
+                  <a href="${book.waterstones}" target="_blank" class="text-blue-600 underline">Buy on Waterstones</a>
+                </div>
+              </div>
+            </div>
+          `).join(''));
+        </script>
+      </div>
+    </section>
+    <!-- Historical Perspectives -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">Historical Perspectives</h2>
+      <div class="grid md:grid-cols-4 sm:grid-cols-2 gap-6">
+        <script>
+          const thinkers = [
+            {
+              id: 'egyptians',
+              name: 'Ancient Egypt',
+              work: 'Ebers Papyrus',
+              img: 'https://upload.wikimedia.org/wikipedia/commons/e/e4/PEbers_c41-bc.jpg',
+              context: 'The ancient Egyptians were among the first to document behaviors and symptoms that might resemble mental health struggles. Their explanations were spiritual: mental disturbances were caused by demonic forces or punishment from the gods. Treatment involved spells, rituals, and physical remedies—like trepanation, a procedure to release evil spirits by boring holes in the skull. But while the lens was spiritual, it wasn’t dismissive. The afflicted weren’t necessarily cast out—they were helped, healed, restored. Illness of the mind was seen as something that could be treated, not ignored.',
+              modern: 'There’s something oddly affirming about how early they were to acknowledge that behavior could be off, not evil, not criminal, just... altered. Their explanations don’t hold up scientifically, but their impulse to care does. Contrast that with the later Medivel Christian era where spiritual explanations often led to confinement or persecution. Modern psychiatry has thankfully rejected demons and curses but we still sometimes treat mental health as invisible or less real. The Egyptians, in their own way, didn’t.',
+              link: 'https://en.wikipedia.org/wiki/Ebers_Papyrus'
+            },
+            {
+              id: 'avicenna',
+              name: 'Avicenna',
+              work: 'Canon of Medicine',
+              img: 'https://upload.wikimedia.org/wikipedia/commons/3/35/Avicenne_-_Avicenna_-_Ibn_Sina_%28980-1037%29_CIPB2067.jpg',
+              context: 'Avicenna (Ibn Sina), writing in the 11th century, was miles ahead of his time. His Canon of Medicine treated emotional and mental disorders with both biological and psychological explanations. He believed that sadness, fear, and obsessive thoughts were legitimate illnesses—and he described treatments like music therapy, baths, rest, and rational conversation. He didn’t draw a hard line between body and soul. If the mind was disturbed, the body followed—and vice versa. That feels surprisingly modern.',
+              modern: 'Avicenna was doing biopsychosocial models before we had a name for them. He held space for physical causes, emotional states, and environmental triggers. Today, we’re catching up—trying to build integrated approaches between GPs, therapists, and social care. But in some ways, we’ve fragmented: we over-specialize. What he lacked in medical technology, he made up for with coherence. Our systems could learn from that.',
+              link: 'https://en.wikipedia.org/wiki/The_Canon_of_Medicine'
+            },
+            {
+              id: 'hippocrates',
+              name: 'Hippocrates',
+              work: 'On the Sacred Disease',
+              img: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Hippocrates.jpg',
+              context: 'Hippocrates, often called the father of Western medicine, took a stand that still echoes today: illness, including what we now call epilepsy and mental disorders, was not caused by gods or spirits. In On the Sacred Disease, he argued that these conditions were natural and should be treated as such. He believed that environmental factors, diet, and lifestyle shaped health, including mood and thought. Melancholia was, in his view, caused by an excess of black bile, wrong in detail, but revolutionary in approach.',
+              modern: 'Hippocrates broke the spell of divine punishment as a medical explanation. That shift, from sacred to scientific laid the groundwork for everything that followed. While his humour theory doesn’t stand today, his principle that disease has physical causes remains central. Yet we should also be cautious: in moving away from spiritual explanations, modern systems sometimes lose sight of meaning, story, and belief. Hippocrates didn’t strip away humanity when he rejected superstition; we shouldn’t either.',
+              link: 'https://en.wikipedia.org/wiki/Hippocrates'
+            },
+            {
+              id: 'galen',
+              name: 'Galen',
+              work: 'Humours Theory',
+              img: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Quinta_Essentia_%28Thurneisse%29_illustration_Alchemic_approach_to_four_humors_in_relation_to_the_four_elements_and_zodiacal_signs.jpg',
+              context: 'Galen built on Hippocrates’ work and turned the idea of “humours” into the dominant medical model for over a thousand years. Mental states were governed by the balance (or imbalance) of bodily fluids—blood, phlegm, black bile, yellow bile. Melancholia (what we now call depression) was the result of too much black bile. The treatment? Diet, exercise, bleeding, purging, environmental changes. Sounds crude, but it wasn’t lazy thinking. It was an honest attempt to map physical causes to emotional outcomes.',
+              modern: 'It’s easy to mock humour theory now. But it recognized something fundamental: mood has a physical component. Galen didn’t get the biology right, but his instincts were correct. And there’s something to admire in the idea that mood isn’t a moral failing, it’s a misalignment, a system out of balance. That language imbalance still echoes today, especially when we talk about neurotransmitters. We’ve swapped biles for brain chemicals, but the search for a root cause continues',
+              link: 'https://en.wikipedia.org/wiki/Galen'
+            },
+            {
+              id: 'aretaeus',
+              name: 'Aretaeus of Cappadocia',
+              work: 'On the Causes and Symptoms of Chronic Diseases',
+              img: 'https://upload.wikimedia.org/wikipedia/commons/c/cc/Areteo_di_Cappadocia.jpg',
+              context: 'Aretaeus was a Greek physician writing in the first century CE, whose work was overlooked for centuries but is now recognised for its accuracy and compassion. He described melancholia as a chronic condition, marked by sadness, suspicion, and fixation on specific ideas. Importantly, he saw it not just as a passing state but as something deeply rooted in a person’s constitution. His writings also hinted at a connection between melancholia and mania, foreshadowing what we now understand as bipolar disorder.',
+              modern: 'Aretaeus captured what many people with depression today still experience — that it is not fleeting, not always visible, and can be entwined with cycles of high and low mood. Without lab tests or brain scans, he observed patterns that psychiatry would only formalise thousands of years later. His approach wasn’t perfect, and he still operated within the limitations of humoural theory, but his close listening to lived experience is something we could use more of in modern clinical settings.',
+              link: 'https://en.wikipedia.org/wiki/Aretaeus_of_Cappadocia'
+            },
+            {
+              id: 'razi',
+              name: 'Al-Razi (Rhazes)',
+              work: 'Kitab al-Hawi',
+              img: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/%D8%B2%DA%A9%D8%B1%DB%8C%D8%A7%DB%8C_%D8%B1%D8%A7%D8%B2%DB%8C_%D8%A7%D8%AB%D8%B1_%D8%AD%D8%B3%DB%8C%D9%86_%D8%A8%D9%87%D8%B2%D8%A7%D8%AF_%28cropped%29.jpg',
+              context: 'Al-Razi, a Persian physician in the 9th and 10th centuries, brought a new clarity to mental illness. He rejected supernatural explanations and insisted that psychological and emotional disorders had natural causes. His writings included case histories, suggesting that he saw each patient as an individual, not merely a diagnosis. He treated mental illness in hospitals, integrating care for the mind with care for the body. He also saw pleasure, music, and companionship as therapeutic.',
+              modern: 'Al-Razi stands as an early advocate for science based treatment, resisting the spiritual dogma that would dominate later centuries. He reminds us that seeing the mentally unwell as patients, rather than pariahs, has a deep history. His idea that treatment should be tailored to the person, not the label, aligns closely with modern personalised care models. Yet even now, our systems often fall short of that individual attention, especially in overstretched public health settings.',
+              link: 'https://en.wikipedia.org/wiki/Muhammad_ibn_Zakariya_al-Razi'
+            },
+            {
+              id: 'farabi',
+              name: 'Al-Farabi',
+              work: 'Social Philosophy and Psychology',
+              img: 'https://upload.wikimedia.org/wikipedia/commons/0/04/Alpharabius_in_Liber_Chronicarum_1493_AD.png',
+              context: 'Al-Farabi was a philosopher more than a physician, but his views on the mind had a lasting influence. He believed that reason and emotion could be developed towards harmony, and that the role of society and environment shaped a person’s mental state. He thought that a just society would nurture well-being, while a corrupt one would produce discord and inner turmoil. His work reflects a broader Islamic philosophical tradition that did not separate mental health from ethical and social frameworks.',
+              modern: 'Al-Farabi’s insights echo in modern social models of mental health. Today, we recognise the impact of poverty, inequality, community, and belonging on mental wellbeing. The idea that mental illness can emerge from social breakdown is not new, he was already there centuries ago. What we sometimes forget is how long we’ve known this. We still over focus on individual pathology, forgetting the structural causes. Al-Farabi reminds us to look outward as well as inward.',
+              link: 'https://en.wikipedia.org/wiki/Al-Farabi'
+            },
+            {
+              id: 'hospitals',
+              name: 'Early Hospitals',
+              work: 'Baghdad, Cairo, Córdoba',
+              img: 'https://upload.wikimedia.org/wikipedia/commons/6/66/Muayyad_Maristan_facade_1.jpg',
+              context: 'The first hospitals to treat mental illness with dignity emerged during the Islamic Golden Age. In cities like Baghdad, Cairo, and Córdoba, care was not only medical but often integrated music, rest, and conversation. These institutions were public, often free, and emphasised compassion. Mental illness was treated alongside physical illness, not as a separate, shameful condition. The goal was healing, not isolation. Staff included both doctors and philosophers, recognising that thought and feeling were just as important as bodily health.',
+              modern: 'It is sobering to realise that over a thousand years ago, cities offered more humane mental health care than many do today. While we have advanced diagnostics and medication, we often lack the holistic, non-judgemental environments these hospitals created. They remind us that dignity and respect are not modern inventions, they are values we have sometimes forgotten. There is a lesson here: that progress is not just about science, but about how we treat people.',
+              link: 'https://en.wikipedia.org/wiki/Bimaristan'
+            },
+            {
+              id: 'huangdi',
+              name: 'Huangdi Neijing',
+              work: 'Yellow Emperor’s Inner Canon',
+              img: 'https://upload.wikimedia.org/wikipedia/commons/a/a9/Yellowemperor.jpg',
+              context: 'The Huangdi Neijing, a foundational text of Chinese medicine, offered a deeply holistic understanding of health. It saw the body as a system in balance, where emotion, season, diet, and energy flows all played a role. Mental health was not separate from physical health; both were connected through Qi, or life force. Emotions were seen as both causes and effects of illness: anger harming the liver and grief weakening the lungs. Treatments included acupuncture, herbal medicine, breathing exercises and lifestyle change.',
+              modern: 'The Neijing anticipated what our medicine is still trying to integrate: that emotion lives in the body, and that prevention is as important as cure. While concepts like Qi aren’t grounded in the language of science, the logic of balance, connection, and responsiveness is deeply relevant. Today, mindfulness and somatic therapies reflect this same philosophy. The danger is dismissing it all as unscientific, when in truth, much of it aligns with what modern neuroscience is rediscovering..',
+              link: 'https://en.wikipedia.org/wiki/Huangdi_Neijing'
+            },
+            {
+              id: 'christian',
+              name: 'Medieval Christian Europe',
+              work: 'Demonic & Moral Interpretations',
+              img: 'https://upload.wikimedia.org/wikipedia/commons/d/d2/K%C3%A9pes_kr%C3%B3nika_-_126.oldal_-_Flagell%C3%A1nsok.jpg',
+              context: 'In medieval Europe, the dominant view of mental illness returned to the spiritual. Those who were mentally unwell were often seen as possessed, morally deviant, or touched by God. Treatment ranged from prayer and pilgrimage to exorcism and imprisonment. Monasteries sometimes offered care, but often without understanding or consent. For many, suffering of the mind became a reason for isolation, punishment, or suspicion. Madness was not an illness to be treated, but a condition to be endured or feared.',
+              modern: 'This era casts a long shadow. The stigmatisation of mental illness as weakness or sin persisted for centuries. Even today, echoes remain in how we hide our struggles, or judge those who “can’t cope.” Yet there were rare moments of kindness too, mostly from within religious communities. And while the scientific understanding was limited, the impulse to care sometimes came through. Modern mental health care must constantly fight to overcome these inherited fears, the fear that suffering makes us unworthy.',
+              link: 'https://en.wikipedia.org/wiki/Mental_disorder#Middle_Ages'
+            },
+            {
+              id: 'freud',
+              name: 'Freud',
+              work: 'Psychoanalysis',
+              img: 'https://upload.wikimedia.org/wikipedia/commons/3/36/Sigmund_Freud%2C_by_Max_Halberstadt_%28cropped%29.jpg',
+              context: 'Freud changed the conversation. At the turn of the 20th century, he brought the unconscious mind into focus. Depression, in his view, wasn’t just sadness, it was loss turned inward, anger turned against the self. His theories about repression, childhood, and the role of the unconscious shaped generations of thinking. He listened closely, even if he often interpreted rigidly. His method: talk therapy, created space for feelings to be explored rather than dismissed.',
+              modern: 'Freud’s legacy is complicated. Many of his specific theories have been revised or abandoned, but his influence is everywhere. The idea that our present is shaped by our past, that thoughts can be hidden even from ourselves, remains central. But where Freud often pathologised desire or grief, modern therapy seeks understanding without blame. Still, he opened the door to inner life as a subject worth exploring, and to the idea that healing can happen through words, not just medicine.',
+              link: 'https://en.wikipedia.org/wiki/Sigmund_Freud'
+            },
+            {
+              id: 'pinel',
+              name: 'Philippe Pinel',
+              work: 'Moral Treatment',
+              img: 'https://upload.wikimedia.org/wikipedia/commons/f/f8/Philippe_Pinel_%281745_-_1826%29.jpg',
+              context: 'In the 18th century, reformers like Philippe Pinel in France began to challenge the cruelty of mental asylums. Pinel famously ordered that chains be removed from patients in Paris, declaring that the mentally ill were not animals, but humans in distress. He advocated for "moral treatment": structured daily life, meaningful work, kindness, and conversation. Others followed across Europe and North America, trying to shift the model from punishment to care. It was imperfect and often patronising, but it was a start.',
+              modern: 'These reforms marked the beginning of mental health as a legitimate branch of medicine. Though the term “moral treatment” sounds quaint now, the principle was powerful that care should be based on respect. Today’s psychiatric wards and community services owe their existence to this shift. Yet modern systems can still be dehumanising: rushed consultations, locked wards, stigma in the workplace. We have the science now, but Pinel’s lesson remains that dignity is the first step in any true treatment.',
+              link: 'https://en.wikipedia.org/wiki/Philippe_Pinel'
+            }
+          ];
+
+          document.currentScript.insertAdjacentHTML('beforebegin', thinkers.map(t => `
+            <div>
+              <button data-modal-target="#modal-${t.id}" class="focus:outline-none">
+                <img src="${t.img}" alt="Portrait of ${t.name}" class="w-full h-auto shadow">
+                <p class="mt-2 font-semibold">${t.name}</p>
+                <p class="text-sm italic">${t.work}</p>
+              </button>
+            </div>
+          `).join(''));
+
+          document.body.insertAdjacentHTML('beforeend', thinkers.map(t => `
+            <div id="modal-${t.id}" class="modal fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+              <div class="bg-white max-w-lg w-full p-6 rounded-lg shadow-lg relative">
+                <button class="absolute top-2 right-2 text-xl" data-close-button>&times;</button>
+                <h3 class="text-xl font-bold mb-2">${t.name} – ${t.work}</h3>
+                <p class="mb-2">${t.context}</p>
+                <p class="mb-2">${t.modern}</p>
+                <a href="${t.link}" target="_blank" class="text-blue-600 underline">Learn more on Wikipedia</a>
+              </div>
+            </div>
+          `).join(''));
+        </script>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="p-6 mt-10 text-center text-gray-700 text-sm">
+    <p>This resource is part of a visual presentation on living with depression. It includes AI-generated visuals and draws stylistic inspiration from <em>Persepolis</em> and Van Gogh’s Japonisme.</p>
+  </footer>
+</body>
+</html>
