@@ -98,6 +98,13 @@ section {
     .grid {
     gap: 1.5rem; /* Adjusts the spacing between items */
 }
+    /* Ensure all images in the grid have the same size */
+.grid img {
+    width: 150px; /* Set a fixed width */
+    height: 150px; /* Set a fixed height */
+    object-fit: cover; /* Ensures the image maintains its aspect ratio within the specified dimensions */
+    border-radius: 0.5rem; /* Optional: Add rounded corners for a modern look */
+}
     footer {
     background-color: #1f2937;
     color: white;
